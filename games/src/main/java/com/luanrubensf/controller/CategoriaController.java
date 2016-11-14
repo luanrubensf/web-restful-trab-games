@@ -29,7 +29,7 @@ public class CategoriaController {
     public ResponseEntity<List<Categoria>> getAll(){
 
         List<Categoria> categoriaList = (List<Categoria>) categoriaRepository.findAll();
-        return new ResponseEntity<List<Categoria>>(categoriaList, HttpStatus.OK);
+        return new ResponseEntity<>(categoriaList, HttpStatus.OK);
     }
 
     @RequestMapping(value = "categoria", method = RequestMethod.PUT)
