@@ -1,0 +1,51 @@
+<div id="categorias">
+  <h1 class="page-header">
+    Categorias</h1>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Descrição</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="categoria in vm.categorias">
+          <td>{{categoria.id}}</td>
+          <td>{{categoria.descricao}}</td>
+          <td>
+            <a ng-click="vm.editar(categoria)" href=""><span class="">editar</span></a>
+            <a ng-click="vm.remover(categoria.id)" href=""><span>remover</span></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="row">
+    <div class="main">
+      <div class="form-group text-right">
+        <button id="btnAdicionar" type="button" class="btn btn-success" ng-click="vm.adicionar()">Adicionar</button>
+      </div>
+    </div>
+  </div>
+  <div id="divForm" class="row" ng-show="vm.showForm">
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <h2 class="page-header">Inserindo categoria</h2>
+      <form novalidate name="vm.formCadastroCategoria" class="form-horizontal">
+          <input type="hidden" name="id" />
+          <div class="form-group">
+            <label for="descricao" class="control-label col-sm-2">Descrição</label>
+            <div class="col-sm-4">
+              <input type="text" ng-model="vm.categoria.descricao" class="form-control" required=""/>
+            </div>
+          </div>
+          <div class="form-group text-right">
+            <button class="btn btn-info" ng-click="vm.save(vm.categoria)" 
+              ng-disabled="vm.formCadastroCategoria.$invalid">Salvar</button>
+            <button class="btn btn-danger" ng-click="vm.cancelar()">Cancelar</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>

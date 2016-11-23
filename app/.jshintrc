@@ -1,0 +1,11 @@
+{
+  "undef": true,
+  "unused": true,
+  "predef": [ ],
+  "globals": {
+    "window": false,
+    "$": false,
+    "ctrl": false,
+    "moment": false
+  }
+}

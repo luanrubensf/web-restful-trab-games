@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" href="favicon.ico">
+
+	<title>Sistema de Cadastro de Ha</title>
+
+	<link href="src/resources/libs/css/bootstrap.min.css" rel="stylesheet">
+	<link href="src/resources/css/sys.css" rel="stylesheet">
+
+</head>
+
+<body id="home" ng-app="app">
+	<nav class="navbar navbar-inverse navbar-fixed-top" ng-include="'menu-superior.html'">
+
+	</nav>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3 col-md-2 sidebar">
+				<ul class="nav nav-sidebar">
+					<li class="home"><a href="/">Home <span class="sr-only">(current)</span></a></li>
+					<li class="categorias"><a href="#/categoria">Categorias</a></li>
+					<li class="games"><a href="#/game">Games</a></li>
+				</ul>
+			</div>
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				<ng-view>
+
+				</ng-view>
+			</div>
+
+		</div>
+	</div>
+
+	<script src="src/resources/libs/js/jquery-3.1.1.min.js"></script>
+	<script src="src/resources/libs/js/bootstrap.min.js"></script>
+	<script src="src/resources/libs/js/bootstrap-notify.min.js"></script>
+	<script src="src/resources/libs/js/angular.min.js"></script>
+	<script src="src/resources/libs/js/angular-route.js"></script>
+
+	<script src="app.module.js"></script>
+	<script src="app.config.js"></script>
+	<script src="src/categoria/categoria.controller.js"></script>
+	<script src="src/game/game.controller.js"></script>
+
+</body>
+
+</html>

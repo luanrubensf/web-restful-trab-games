@@ -16,6 +16,9 @@ public class Game {
     @Column(name = "descricao", nullable = true, length = 300)
     private String descricao;
 
+    @Column(name = "anoLancamento", nullable = true)
+    private Integer anoLancamento;
+
     @ManyToOne
     @JoinColumn(name = "categoriaid")
     private Categoria categoria;
@@ -50,5 +53,13 @@ public class Game {
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+
+    public Integer getAnoLancamento() {
+        return anoLancamento;
+    }
+
+    public void setAnoLancamento(Integer anoLancamento) {
+        this.anoLancamento = anoLancamento;
     }
 }

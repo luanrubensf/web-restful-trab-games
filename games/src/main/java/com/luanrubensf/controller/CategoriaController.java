@@ -14,17 +14,20 @@ public class CategoriaController {
     @Inject
     CategoriaRepository categoriaRepository;
 
+    @CrossOrigin
     @RequestMapping(value = "/categoria/{id}", method = RequestMethod.GET)
     public ResponseEntity<Categoria> getCategoria(@PathVariable("id") Long id){
         Categoria categoria = categoriaRepository.findOne(id);
         return new ResponseEntity<>(categoria, HttpStatus.OK);
     }
 
+    @CrossOrigin
     @RequestMapping(value = "categoria", method = RequestMethod.POST)
     public ResponseEntity<Categoria> saveCategoria(@RequestBody Categoria categoria){
         return new ResponseEntity<>(categoriaRepository.save(categoria), HttpStatus.OK);
     }
 
+    @CrossOrigin
     @RequestMapping(value = "categoria", method = RequestMethod.GET)
     public ResponseEntity<List<Categoria>> getAll(){
 
@@ -32,11 +35,13 @@ public class CategoriaController {
         return new ResponseEntity<>(categoriaList, HttpStatus.OK);
     }
 
+    @CrossOrigin
     @RequestMapping(value = "categoria", method = RequestMethod.PUT)
     public ResponseEntity<Categoria> update(@RequestBody Categoria categoria){
         return new ResponseEntity<>(categoriaRepository.save(categoria), HttpStatus.OK);
     }
 
+    @CrossOrigin
     @RequestMapping(value = "categoria", method = RequestMethod.DELETE)
     public void delete(@RequestParam(value = "id") Long id){
         categoriaRepository.delete(id);

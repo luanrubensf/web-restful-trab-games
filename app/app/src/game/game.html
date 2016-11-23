@@ -1,0 +1,73 @@
+<div id="games">
+    <h1 class="page-header">Games</h1>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nome</th>
+                    <th>Ano</th>
+                    <th>Categoria</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="game in vm.games">
+                    <td>{{game.id}}</td>
+                    <td>{{game.nome}}</td>
+                    <td>{{game.anoLancamento}}</td>
+                    <td>{{game.categoria.descricao}}</td>
+                    <td>
+                        <a ng-click="vm.editar(game)" href=""><span class="">editar</span></a>
+                        <a ng-click="vm.remover(game.id)" href=""><span>remover</span></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <div class="main">
+            <div class="form-group text-right">
+                <button id="btnAdicionar" type="button" class="btn btn-success" ng-click="vm.adicionar()">Adicionar</button>
+            </div>
+        </div>
+    </div>
+    <div id="divForm" class="row" ng-show="vm.showForm">
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h2 class="page-header">Inserindo game</h2>
+            <form novalidate name="vm.formCadastroGame" class="form-horizontal">
+                <input type="hidden" name="id" />
+                <div class="form-group">
+                    <label for="nome" class="control-label col-sm-2">Nome</label>
+                    <div class="col-sm-6">
+                        <input type="text" ng-model="vm.game.nome" class="form-control" required/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Descrição</label>
+                    <div class="col-sm-6">
+                        <textarea class="form-control" ng-model="vm.game.descricao"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="ano" class="control-label col-sm-2">Ano lançamento</label>
+                    <div class="col-md-6">
+                        <input class="form-control" maxlength="4" ng-model="vm.game.anoLancamento" required/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="categoria" class="control-label col-md-2">Categoria</label>
+                    <div class="col-md-6">
+                        <select class="select" id="select-categorias">
+                            <option value="teste">teste</option>
+						</select>
+                    </div>
+                </div>
+                <div class="form-group text-right">
+                    <button class="btn btn-info" ng-click="vm.save(vm.game)" ng-disabled="vm.formCadastroGame.$invalid">Salvar</button>
+                    <button class="btn btn-danger" ng-click="vm.cancelar()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
