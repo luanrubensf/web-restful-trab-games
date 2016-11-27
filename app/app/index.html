@@ -9,6 +9,9 @@
 
 	<link href="src/resources/libs/css/bootstrap.min.css" rel="stylesheet">
 	<link href="src/resources/css/sys.css" rel="stylesheet">
+	<link href="src/resources/libs/css/select.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">    
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.default.css">-->
 
 </head>
 
@@ -21,7 +24,7 @@
 		<div class="row">
 			<div class="col-sm-3 col-md-2 sidebar">
 				<ul class="nav nav-sidebar">
-					<li class="home"><a href="/">Home <span class="sr-only">(current)</span></a></li>
+					<li class="home"><a href="#/home">Home <span class="sr-only">(current)</span></a></li>
 					<li class="categorias"><a href="#/categoria">Categorias</a></li>
 					<li class="games"><a href="#/game">Games</a></li>
 				</ul>
@@ -40,11 +43,15 @@
 	<script src="src/resources/libs/js/bootstrap-notify.min.js"></script>
 	<script src="src/resources/libs/js/angular.min.js"></script>
 	<script src="src/resources/libs/js/angular-route.js"></script>
+	<script src="src/resources/libs/js/angular-sanitize.min.js"></script>
+
+	<script src="src/resources/libs/js/select.min.js"></script>
 
 	<script src="app.module.js"></script>
 	<script src="app.config.js"></script>
 	<script src="src/categoria/categoria.controller.js"></script>
 	<script src="src/game/game.controller.js"></script>
+	<script src="src/common/selectFilter.js"></script>
 
 </body>
 

@@ -1,0 +1,26 @@
+{
+  "name": "web-restful-trab-games",
+  "description": "Trabalho tecnologias web",
+  "main": "index.html",
+  "authors": [
+    "Luan Rubens <luanrubensf@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "web",
+    "restful",
+    "angular7"
+  ],
+  "homepage": "https://github.com/luanrubensf/web-restful-trab-games",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-select": "0.19.6"
+  }
+}

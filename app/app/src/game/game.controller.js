@@ -20,6 +20,10 @@
         vm.cancelar = cancelar;
         vm.save = save;
 
+        vm.peopleAsync = [
+            { id: 1, name: '1' }, { id: 2, name: '2' }
+        ];
+
         init();
 
         function init() {
@@ -27,6 +31,10 @@
                 .success(function (data) {
                     vm.games = data;
                 });
+            $http.get('http://localhost:8080/categoria')
+                .success(function (data) {
+                    vm.categorias = data;
+                });;
         }
 
         function editar(game) {
@@ -71,13 +79,13 @@
                 init();
                 cancelar();
             })
-            .error(function () {
-                $.notify({
-                    message: 'Erro ao salvar game'
-                }, {
-                        type: 'danger'
-                    });
-            });
+                .error(function () {
+                    $.notify({
+                        message: 'Erro ao salvar game'
+                    }, {
+                            type: 'danger'
+                        });
+                });
         }
     }
 

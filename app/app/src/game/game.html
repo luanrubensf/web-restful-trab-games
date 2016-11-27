@@ -58,9 +58,12 @@
                 <div class="form-group">
                     <label for="categoria" class="control-label col-md-2">Categoria</label>
                     <div class="col-md-6">
-                        <select class="select" id="select-categorias">
-                            <option value="teste">teste</option>
-						</select>
+                        <ui-select ng-model="vm.game.categoria" theme="select2" title="Escolha uma categoria">
+                            <ui-select-match placeholder="Selecione uma categoria">{{$select.selected.descricao}}</ui-select-match>
+                            <ui-select-choices repeat="categoria in vm.categorias | propsFilter: {descricao: $select.search}">
+                                <div ng-bind-html="categoria.descricao"></div>
+                            </ui-select-choices>
+                        </ui-select>
                     </div>
                 </div>
                 <div class="form-group text-right">
