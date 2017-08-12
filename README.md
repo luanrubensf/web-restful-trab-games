@@ -1,6 +1,7 @@
 # web-restful-trab-games
-Trabalho de Tecnologias web.
 
-Cadastro de games como exemplo feito para a disciplina de tecnologias web.
+College project about web technologies.
 
-Projeto construído com Spring com arquitetura RESTful, JPA e banco de dados PostgreSQL.
+It was developed a game registration to improve our skills in web technologies, such as HTML, Java, Javascript and CSS.
+
+This project uses Spring with a RESTFul architecture, JPA and PostgreSQL.
